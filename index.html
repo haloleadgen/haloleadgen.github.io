@@ -211,11 +211,117 @@
       gap: 6px;
     }
     .trust-item::before {
-      content: '\2713';
+      content: '✓';
       color: #1b3a6b;
       font-weight: 700;
       font-size: 14px;
     }
+
+    /* TRUSTED BY */
+    .trusted-by {
+      background: #f5f5f3;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 1px solid #e8e8e8;
+    }
+    .trusted-by h3 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .trusted-names {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .trusted-name {
+      background: #fff;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+    }
+    .trusted-name.highlight {
+      border-color: #1b3a6b;
+      color: #1b3a6b;
+    }
+
+    /* PAST PROJECTS */
+    .projects {
+      background: #fff;
+      padding: 48px 20px;
+      border-top: 1px solid #ebebeb;
+    }
+    .projects h3 {
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+    .projects .sub {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .project-card {
+      border: 1.5px solid #e8eaf0;
+      border-radius: 12px;
+      padding: 20px;
+      background: #fafafa;
+    }
+    .project-card .proj-type {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #1b3a6b;
+      margin-bottom: 6px;
+    }
+    .project-card .proj-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+    .project-card .proj-loc {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .project-card .proj-work {
+      font-size: 13px;
+      color: #555;
+    }
+    .project-card .proj-year {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #bbb;
+      font-weight: 600;
+    }
+    .projects-cta {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 14px;
+      color: #666;
+    }
+    .projects-cta strong { color: #1b3a6b; }
 
     .serve {
       padding: 40px 20px;
@@ -309,7 +415,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <p class="license">Victory E&amp;I Roofing and Construction, LLC &nbsp;·&nbsp; FL License CCC1333273 &nbsp;·&nbsp; 20+ Years Commercial Experience</p>
+  <p class="license">Victory E&I Roofing and Construction, LLC &nbsp;·&nbsp; FL License CCC1333273 &nbsp;·&nbsp; 20+ Years Commercial Experience</p>
   <h1>Free Commercial Roof &amp;<br><span>Window Inspection</span></h1>
   <p>Large-scale roofing and window projects across Miami-Dade, Broward, and Palm Beach. On time, on budget — backed by 20 years of South Florida commercial work.</p>
   <div class="badges">
@@ -362,7 +468,6 @@
         <option value="Other Commercial">Other Commercial</option>
       </select>
 
-      <!-- Hidden fields -->
       <input type="hidden" name="consent_given" value="yes" />
       <input type="hidden" name="source" value="HALO Commercial Landing Page" />
       <input type="hidden" name="_subject" value="New HALO Commercial Lead — Roof/Window Inspection Request" />
@@ -372,7 +477,7 @@
         <div class="consent-row">
           <input type="checkbox" id="consent" name="consent" required />
           <p>
-            By submitting this form, I agree to be contacted by <strong>Victory E&amp;I Roofing and Construction, LLC</strong> (License CCC1333273) at the phone number provided. I consent to receive calls, prerecorded messages, and text messages regarding a commercial roof or window inspection. Consent is not required to receive services. Msg &amp; data rates may apply. Reply STOP to opt out. See our <a href="https://victoryroofer.com/privacy-policy" target="_blank">Privacy Policy</a>.
+            By submitting this form, I agree to be contacted by <strong>Victory E&I Roofing and Construction, LLC</strong> (License CCC1333273) at the phone number provided. I consent to receive calls, prerecorded messages, and text messages regarding a commercial roof or window inspection. Consent is not required to receive services. Msg &amp; data rates may apply. Reply STOP to opt out. See our <a href="https://victoryroofer.com/privacy-policy" target="_blank">Privacy Policy</a>.
           </p>
         </div>
       </div>
@@ -393,6 +498,106 @@
     <div class="trust-item">Large-Scale Projects Welcome</div>
     <div class="trust-item">Miami-Dade · Broward · Palm Beach</div>
   </div>
+</div>
+
+<!-- TRUSTED BY -->
+<div class="trusted-by">
+  <h3>Projects Completed For</h3>
+  <div class="trusted-names">
+    <div class="trusted-name highlight">Walgreens</div>
+    <div class="trusted-name highlight">Olive Garden</div>
+    <div class="trusted-name">Federation Plaza Apartments</div>
+    <div class="trusted-name">Club Caribe Condominium Association</div>
+    <div class="trusted-name">Hallandale Towers East</div>
+    <div class="trusted-name">Harid Conservatory</div>
+    <div class="trusted-name">Rabbinical College of Florida</div>
+    <div class="trusted-name">Community Center Inc.</div>
+    <div class="trusted-name">Miami Scottish Rite</div>
+    <div class="trusted-name">A-Z Real Estate Development LLC</div>
+    <div class="trusted-name">EAM Investments LLC</div>
+  </div>
+</div>
+
+<!-- PAST PROJECTS -->
+<div class="projects">
+  <h3>Recent Commercial Projects</h3>
+  <p class="sub">Completed across Miami-Dade, Broward &amp; Palm Beach — 2020 through 2024</p>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="proj-type">Retail Chain</div>
+      <div class="proj-name">Walgreens</div>
+      <div class="proj-loc">Coral Springs, FL</div>
+      <div class="proj-work">Re-roof flat roof system</div>
+      <div class="proj-year">Completed 2024</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Restaurant / Commercial</div>
+      <div class="proj-name">Olive Garden</div>
+      <div class="proj-loc">Sunrise, FL</div>
+      <div class="proj-work">New construction — Metal &amp; Duro-Last flat roof</div>
+      <div class="proj-year">Completed 2024</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Condominium Association</div>
+      <div class="proj-name">Club Caribe Condominium</div>
+      <div class="proj-loc">Coconut Creek, FL</div>
+      <div class="proj-work">Full tile roof replacement</div>
+      <div class="proj-year">Completed 2024</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Apartment Complex</div>
+      <div class="proj-name">Federation Plaza Apartments</div>
+      <div class="proj-loc">Hollywood, FL</div>
+      <div class="proj-work">Sika roof waterproofing system</div>
+      <div class="proj-year">Completed 2024</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Condominium</div>
+      <div class="proj-name">Inspirational Point Condominium</div>
+      <div class="proj-loc">North Miami Beach, FL</div>
+      <div class="proj-work">Re-roof concrete deck BUR system</div>
+      <div class="proj-year">Completed 2024</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Residential Tower</div>
+      <div class="proj-name">Hallandale Towers East</div>
+      <div class="proj-loc">Hallandale Beach, FL</div>
+      <div class="proj-work">Full flat roof re-roof</div>
+      <div class="proj-year">Completed 2023</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Education / Conservatory</div>
+      <div class="proj-name">Harid Conservatory</div>
+      <div class="proj-loc">Boca Raton, FL</div>
+      <div class="proj-work">Re-roof concrete deck BUR system</div>
+      <div class="proj-year">Completed 2022</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Religious Institution</div>
+      <div class="proj-name">Rabbinical College of Florida</div>
+      <div class="proj-loc">Lauderhill, FL</div>
+      <div class="proj-work">New construction — R-20 BUR system</div>
+      <div class="proj-year">Completed 2022</div>
+    </div>
+
+    <div class="project-card">
+      <div class="proj-type">Community Center</div>
+      <div class="proj-name">Community Center Inc.</div>
+      <div class="proj-loc">Coral Springs, FL</div>
+      <div class="proj-work">Re-roof concrete deck BUR system</div>
+      <div class="proj-year">Completed 2020</div>
+    </div>
+
+  </div>
+  <p class="projects-cta">All projects available as references. <strong>Call (954) 634-2028</strong> to speak with our team.</p>
 </div>
 
 <!-- WHO WE SERVE -->
@@ -424,7 +629,7 @@
     <div class="step-num">2</div>
     <div class="step-text">
       <strong>We contact you within 24 hours</strong>
-      <span>A licensed commercial roofing specialist from Victory E&amp;I schedules your site visit at your convenience.</span>
+      <span>A licensed commercial roofing specialist schedules your site visit at your convenience.</span>
     </div>
   </div>
   <div class="step">
@@ -438,23 +643,22 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>Victory E&amp;I Roofing and Construction, LLC &nbsp;·&nbsp; FL Roofing License CCC1333273</p>
+  <p>Victory E&I Roofing and Construction, LLC &nbsp;·&nbsp; FL Roofing License CCC1333273</p>
   <p>Serving Miami-Dade, Broward, and Palm Beach Counties</p>
-  <p style="margin-top:6px;"><a href="tel:+15619738228" style="color:#ccc;">(561) 973-8228</a></p>
+  <p style="margin-top:6px;"><a href="tel:+15619738228" style="color:#ccc;">(561) 973-8228)</a></p>
   <p style="margin-top:8px;">
     <a href="https://victoryroofer.com" target="_blank">victoryroofer.com</a>
     &nbsp;·&nbsp;
     <a href="https://victoryroofer.com/privacy-policy" target="_blank">Privacy Policy</a>
   </p>
   <p style="margin-top:8px; font-size:11px;">
-    By submitting the form on this page, you consent to be contacted by Victory E&amp;I Roofing and Construction, LLC
+    By submitting the form on this page, you consent to be contacted by Victory E&I Roofing and Construction, LLC
     via calls and texts. Consent is not required to receive services.
   </p>
 </footer>
 
 <script>
   const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbypJZDS1JVCbxR3LPRESsdXESHNvoLqto5hIPswLToo75vze_UOafOJwN4-PSyFt4LagQ/exec';
-
   document.getElementById('haloForm').addEventListener('submit', function() {
     var data = {
       name: document.getElementById('name').value,
