@@ -11,452 +11,238 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f5f5f3;
+      background: #f0f2f5;
       color: #1a1a1a;
       line-height: 1.6;
     }
 
     .topbar {
-      background: #1a1a1a;
-      color: #fff;
+      background: #c9a84c;
+      color: #1a1a1a;
       text-align: center;
       padding: 10px 16px;
       font-size: 13px;
-      letter-spacing: 0.3px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
     }
-    .topbar strong { color: #f5c842; }
+
+    .site-header {
+      background: #0d2137;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+    .header-logo { display: flex; align-items: center; gap: 12px; }
+    .header-logo img { height: 52px; width: auto; }
+    .header-logo-text { display: flex; flex-direction: column; }
+    .header-logo-text .company-name { color: #fff; font-size: 15px; font-weight: 700; letter-spacing: 0.2px; line-height: 1.2; }
+    .header-logo-text .company-tagline { color: #c9a84c; font-size: 11px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+    .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+    .header-phone { color: #fff; font-size: 18px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; }
+    .header-phone:hover { color: #c9a84c; }
+    .header-website { color: #c9a84c; font-size: 12px; text-decoration: none; opacity: 0.85; }
+    .header-website:hover { opacity: 1; }
 
     .hero {
-      background: linear-gradient(135deg, #1b3a6b 0%, #0f2347 100%);
-      color: #fff;
-      padding: 48px 20px 40px;
-      text-align: center;
-    }
-    .hero .license {
-      font-size: 12px;
-      opacity: 0.65;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: clamp(26px, 5vw, 42px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    .hero h1 span { color: #f5c842; }
-    .hero p {
-      font-size: 17px;
-      opacity: 0.88;
-      max-width: 560px;
-      margin: 0 auto 28px;
-    }
-
-    .badges {
+      position: relative;
+      min-height: 420px;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-    .badge {
-      background: rgba(245, 200, 66, 0.15);
-      border: 1.5px solid #f5c842;
-      border-radius: 8px;
-      padding: 10px 20px;
+      padding: 60px 20px 80px;
       text-align: center;
+      overflow: hidden;
     }
-    .badge .amount {
-      font-size: 24px;
-      font-weight: 700;
-      color: #f5c842;
-      display: block;
-      line-height: 1.1;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://d8j0ntlcm91z4.cloudfront.net/user_3EKQXUxNjVHmdIXx30UCN0CpuFw/hf_20260617_194351_3813d659-f341-4629-8aea-9c829a7ae727.jpeg');
+      background-size: cover;
+      background-position: center 30%;
     }
-    .badge .label {
-      font-size: 12px;
-      opacity: 0.85;
-      margin-top: 2px;
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(13,33,55,0.82) 0%, rgba(13,33,55,0.75) 60%, rgba(13,33,55,0.90) 100%);
     }
+    .hero-content { position: relative; z-index: 2; max-width: 680px; }
+    .hero-logo-wrap { margin-bottom: 20px; }
+    .hero-logo-wrap img { height: 80px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+    .hero-license { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(28px, 5.5vw, 48px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    .hero h1 span { color: #c9a84c; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.88); max-width: 540px; margin: 0 auto 28px; }
 
-    .form-wrap {
-      max-width: 520px;
-      margin: -20px auto 0;
-      padding: 0 16px 48px;
-    }
-    .form-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 32px 28px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    }
-    .form-card h2 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: #1a1a1a;
-    }
-    .form-card .sub {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 24px;
-    }
+    .badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .badge { background: rgba(201,168,76,0.18); border: 1.5px solid #c9a84c; border-radius: 8px; padding: 10px 18px; text-align: center; min-width: 110px; }
+    .badge .amount { font-size: 20px; font-weight: 800; color: #c9a84c; display: block; line-height: 1.1; }
+    .badge .label { font-size: 11px; color: rgba(255,255,255,0.8); margin-top: 3px; }
 
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #444;
-      margin-bottom: 5px;
+    .form-section { max-width: 580px; margin: -36px auto 0; padding: 0 16px 48px; position: relative; z-index: 10; }
+    .form-card { background: #fff; border-radius: 16px; padding: 36px 32px; box-shadow: 0 8px 40px rgba(0,0,0,0.13); border-top: 4px solid #c9a84c; }
+    .form-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+    .form-card-header img { height: 44px; width: auto; }
+    .form-card h2 { font-size: 20px; font-weight: 800; color: #0d2137; }
+    .form-card .sub { font-size: 14px; color: #666; margin-bottom: 24px; margin-top: 6px; }
+
+    label { display: block; font-size: 13px; font-weight: 600; color: #333; margin-bottom: 5px; }
+    input[type="text"], input[type="tel"], input[type="email"], select {
+      width: 100%; padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 15px;
+      color: #1a1a1a; margin-bottom: 16px; transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fafafa; -webkit-appearance: none; appearance: none;
     }
-    input[type="text"],
-    input[type="tel"],
-    select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid #ddd;
-      border-radius: 8px;
-      font-size: 15px;
-      color: #1a1a1a;
-      margin-bottom: 16px;
-      transition: border-color 0.2s;
-      background: #fafafa;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-    input[type="text"]:focus,
-    input[type="tel"]:focus,
-    select:focus {
-      outline: none;
-      border-color: #1b3a6b;
-      background: #fff;
-    }
+    input:focus, select:focus { outline: none; border-color: #0d2137; background: #fff; box-shadow: 0 0 0 3px rgba(13,33,55,0.08); }
     select {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      padding-right: 36px;
+      background-repeat: no-repeat; background-position: right 14px center; background-color: #fafafa; padding-right: 36px;
     }
-
-    .consent-block {
-      background: #f8f8f6;
-      border: 1px solid #e0e0d8;
-      border-radius: 8px;
-      padding: 14px;
-      margin-bottom: 20px;
-    }
-    .consent-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .consent-row input[type="checkbox"] {
-      margin-top: 3px;
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-      accent-color: #1b3a6b;
-    }
-    .consent-row p {
-      font-size: 12px;
-      color: #555;
-      line-height: 1.55;
-    }
-    .consent-row a { color: #1b3a6b; text-decoration: underline; }
-
+    .consent-block { background: #f5f7fa; border: 1px solid #dde3ee; border-radius: 8px; padding: 14px; margin-bottom: 20px; }
+    .consent-row { display: flex; align-items: flex-start; gap: 10px; }
+    .consent-row input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; accent-color: #0d2137; }
+    .consent-row p { font-size: 12px; color: #555; line-height: 1.55; }
+    .consent-row a { color: #0d2137; text-decoration: underline; }
     button[type="submit"] {
-      width: 100%;
-      background: #1b3a6b;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 15px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-      letter-spacing: 0.3px;
+      width: 100%; background: linear-gradient(135deg, #0d2137 0%, #1b3a6b 100%);
+      color: #fff; border: none; border-radius: 8px; padding: 16px; font-size: 16px; font-weight: 700;
+      cursor: pointer; transition: opacity 0.2s, transform 0.1s; letter-spacing: 0.3px;
+      box-shadow: 0 4px 14px rgba(13,33,55,0.3);
     }
-    button[type="submit"]:hover { background: #152d55; }
+    button[type="submit"]:hover { opacity: 0.92; }
     button[type="submit"]:active { transform: scale(0.99); }
+    .disclaimer-small { font-size: 11px; color: #999; text-align: center; margin-top: 12px; }
 
-    .disclaimer-small {
-      font-size: 11px;
-      color: #999;
-      text-align: center;
-      margin-top: 12px;
-    }
+    .cred-strip { background: #0d2137; padding: 20px; }
+    .cred-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px 28px; max-width: 800px; margin: 0 auto; }
+    .cred-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 500; }
+    .cred-item .cred-icon { width: 22px; height: 22px; background: #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #0d2137; font-weight: 800; flex-shrink: 0; }
 
-    .trust {
-      background: #fff;
-      border-top: 1px solid #ebebeb;
-      border-bottom: 1px solid #ebebeb;
-      padding: 24px 20px;
-      text-align: center;
-    }
-    .trust-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px 32px;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-    .trust-item {
-      font-size: 13px;
-      color: #555;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .trust-item::before {
-      content: '✓';
-      color: #1b3a6b;
-      font-weight: 700;
-      font-size: 14px;
-    }
+    .about-section { background: #fff; padding: 52px 20px; border-top: 1px solid #e8e8e8; }
+    .about-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 620px) { .about-inner { grid-template-columns: 1fr; } }
+    .about-text h2 { font-size: 26px; font-weight: 800; color: #0d2137; margin-bottom: 14px; line-height: 1.2; }
+    .about-text h2 span { color: #c9a84c; }
+    .about-text p { font-size: 15px; color: #555; margin-bottom: 16px; }
+    .about-text .website-link { display: inline-flex; align-items: center; gap: 6px; color: #0d2137; font-weight: 700; font-size: 14px; text-decoration: none; border: 2px solid #0d2137; border-radius: 6px; padding: 8px 16px; transition: background 0.2s, color 0.2s; }
+    .about-text .website-link:hover { background: #0d2137; color: #fff; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .stat-box { background: #f5f7fa; border: 1.5px solid #dde3ee; border-radius: 10px; padding: 18px 14px; text-align: center; }
+    .stat-box .stat-num { font-size: 28px; font-weight: 800; color: #0d2137; display: block; line-height: 1; margin-bottom: 4px; }
+    .stat-box .stat-label { font-size: 12px; color: #777; font-weight: 500; }
 
-    .serve {
-      padding: 40px 20px;
-      max-width: 580px;
-      margin: 0 auto;
-    }
-    .serve h3 {
-      font-size: 18px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 20px;
-      color: #1a1a1a;
-    }
-    .serve-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-    .serve-tag {
-      background: #fff;
-      border: 1.5px solid #dde3ee;
-      border-radius: 20px;
-      padding: 8px 18px;
-      font-size: 13px;
-      color: #1b3a6b;
-      font-weight: 500;
-    }
+    .trusted-by { background: #f5f7fa; padding: 48px 20px; text-align: center; border-top: 1px solid #e8e8e8; }
+    .trusted-by h3 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #999; margin-bottom: 24px; }
+    .trusted-names { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 740px; margin: 0 auto; }
+    .trusted-name { background: #fff; border: 1.5px solid #dde3ee; border-radius: 8px; padding: 10px 18px; font-size: 13px; font-weight: 600; color: #333; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .trusted-name.highlight { border-color: #c9a84c; color: #0d2137; background: #fdf9f0; }
 
-    .steps {
-      padding: 40px 20px;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-    .steps h3 {
-      font-size: 18px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 24px;
-      color: #1a1a1a;
-    }
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-    .step-num {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: #1b3a6b;
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .step-text strong {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
+    .projects { background: #fff; padding: 52px 20px; border-top: 1px solid #ebebeb; }
+    .projects h3 { font-size: 26px; font-weight: 800; text-align: center; color: #0d2137; margin-bottom: 8px; }
+    .projects .sub { text-align: center; font-size: 14px; color: #888; margin-bottom: 36px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+    .project-card { border: 1.5px solid #e0e4ed; border-radius: 12px; padding: 20px; background: #f9fafb; transition: box-shadow 0.2s, border-color 0.2s; }
+    .project-card:hover { box-shadow: 0 4px 16px rgba(13,33,55,0.1); border-color: #c9a84c; }
+    .project-card .proj-type { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #c9a84c; margin-bottom: 6px; }
+    .project-card .proj-name { font-size: 15px; font-weight: 700; color: #0d2137; margin-bottom: 3px; }
+    .project-card .proj-loc { font-size: 12px; color: #888; margin-bottom: 8px; }
+    .project-card .proj-work { font-size: 13px; color: #555; }
+    .project-card .proj-year { margin-top: 10px; font-size: 11px; color: #bbb; font-weight: 600; }
+    .projects-cta { text-align: center; margin-top: 32px; font-size: 15px; color: #555; }
+    .projects-cta a { color: #0d2137; font-weight: 700; text-decoration: none; }
+    .projects-cta a:hover { text-decoration: underline; }
+
+    .serve { background: #f5f7fa; padding: 48px 20px; text-align: center; border-top: 1px solid #e8e8e8; }
+    .serve h3 { font-size: 22px; font-weight: 800; color: #0d2137; margin-bottom: 20px; }
+    .serve-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 620px; margin: 0 auto; }
+    .serve-tag { background: #fff; border: 1.5px solid #c9a84c; border-radius: 20px; padding: 8px 18px; font-size: 13px; color: #0d2137; font-weight: 600; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+    .steps { background: #fff; padding: 52px 20px; border-top: 1px solid #ebebeb; }
+    .steps h3 { font-size: 22px; font-weight: 800; text-align: center; color: #0d2137; margin-bottom: 32px; }
+    .steps-inner { max-width: 500px; margin: 0 auto; }
+    .step { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #0d2137, #1b3a6b); color: #fff; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 8px rgba(13,33,55,0.25); }
+    .step-text strong { display: block; font-size: 15px; font-weight: 700; color: #0d2137; margin-bottom: 3px; }
     .step-text span { font-size: 13px; color: #666; }
 
-    /* TRUSTED BY */
-    .trusted-by {
-      background: #f5f5f3;
-      padding: 40px 20px;
-      text-align: center;
-      border-top: 1px solid #e8e8e8;
-    }
-    .trusted-by h3 {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: #999;
-      margin-bottom: 20px;
-    }
-    .trusted-names {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .trusted-name {
-      background: #fff;
-      border: 1.5px solid #ddd;
-      border-radius: 8px;
-      padding: 10px 18px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #333;
-    }
-    .trusted-name.highlight {
-      border-color: #1b3a6b;
-      color: #1b3a6b;
-    }
+    footer { background: #0d2137; color: rgba(255,255,255,0.6); text-align: center; padding: 36px 20px; font-size: 12.5px; line-height: 2; }
+    .footer-logo { margin-bottom: 16px; }
+    .footer-logo img { height: 56px; width: auto; opacity: 0.9; }
+    footer a { color: rgba(255,255,255,0.75); text-decoration: underline; }
+    footer a:hover { color: #c9a84c; }
+    .footer-phone-link { font-size: 18px; font-weight: 700; color: #c9a84c !important; text-decoration: none !important; display: block; margin: 4px 0 8px; }
 
-    /* PAST PROJECTS */
-    .projects {
-      background: #fff;
-      padding: 48px 20px;
-      border-top: 1px solid #ebebeb;
-    }
-    .projects h3 {
-      font-size: 22px;
-      font-weight: 700;
-      text-align: center;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-    }
-    .projects .sub {
-      text-align: center;
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 32px;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .project-card {
-      border: 1.5px solid #e8eaf0;
-      border-radius: 12px;
-      padding: 20px;
-      background: #fafafa;
-    }
-    .project-card .proj-type {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: #1b3a6b;
-      margin-bottom: 6px;
-    }
-    .project-card .proj-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-    }
-    .project-card .proj-loc {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 8px;
-    }
-    .project-card .proj-work {
-      font-size: 13px;
-      color: #555;
-    }
-    .project-card .proj-year {
-      margin-top: 10px;
-      font-size: 11px;
-      color: #bbb;
-      font-weight: 600;
-    }
-    .projects-cta {
-      text-align: center;
-      margin-top: 28px;
-      font-size: 14px;
-      color: #666;
-    }
-    .projects-cta strong { color: #1b3a6b; }
-
-    footer {
-      background: #1a1a1a;
-      color: #888;
-      text-align: center;
-      padding: 24px 16px;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-    footer a { color: #aaa; text-decoration: underline; }
-
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       .form-card { padding: 24px 18px; }
-      .badges { gap: 8px; }
+      .form-card-header { flex-direction: column; text-align: center; }
+      .site-header { justify-content: center; text-align: center; }
+      .header-right { align-items: center; }
+      .header-logo { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
-  ⚠️ <strong>Hurricane Season Alert:</strong> Is your commercial roof protected? Free inspection for South Florida buildings.
+  ⚠️ Hurricane Season — Is your commercial roof protected? Free inspection, no obligation.
 </div>
 
-<!-- HERO -->
+<header class="site-header">
+  <div class="header-logo">
+    <img src="https://victoryroofer.com/wp-content/uploads/2025/12/Victory-Logo.png" alt="Victory E&I Roofing" onerror="this.style.display='none'" />
+    <div class="header-logo-text">
+      <span class="company-name">Victory E&amp;I Roofing &amp; Construction</span>
+      <span class="company-tagline">State Certified · FL License CCC1333273 · Since 2004</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <a class="header-phone" href="tel:+19546342028">(954) 634-2028</a>
+    <a class="header-website" href="https://victoryroofer.com" target="_blank">victoryroofer.com ↗</a>
+  </div>
+</header>
+
 <div class="hero">
-  <p class="license">Victory E&I Roofing and Construction, LLC &nbsp;·&nbsp; FL License CCC1333273 &nbsp;·&nbsp; 20+ Years Commercial Experience</p>
-  <h1>Free Commercial<br><span>Roof Inspection</span></h1>
-  <p>Large-scale commercial roofing across Miami-Dade, Broward, and Palm Beach. On time, on budget — backed by 20 years of South Florida commercial work.</p>
-  <div class="badges">
-    <div class="badge">
-      <span class="amount">20+</span>
-      <div class="label">Years in Business</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-logo-wrap">
+      <img src="https://victoryroofer.com/wp-content/uploads/2025/12/Victory-Logo.png" alt="Victory E&I Roofing" onerror="this.style.display='none'" />
     </div>
-    <div class="badge">
-      <span class="amount">FL Licensed</span>
-      <div class="label">CCC1333273</div>
-    </div>
-    <div class="badge">
-      <span class="amount">$0</span>
-      <div class="label">Inspection Cost</div>
+    <p class="hero-license">Victory E&amp;I Roofing and Construction, LLC &nbsp;·&nbsp; FL License CCC1333273 &nbsp;·&nbsp; 20+ Years Commercial Roofing</p>
+    <h1>Free Commercial<br><span>Roof Inspection</span></h1>
+    <p class="hero-sub">Serving office buildings, warehouses, retail centers, and HOAs across Miami-Dade, Broward &amp; Palm Beach. Licensed, insured, and trusted since 2004.</p>
+    <div class="badges">
+      <div class="badge"><span class="amount">20+</span><div class="label">Years in Business</div></div>
+      <div class="badge"><span class="amount">FL Licensed</span><div class="label">CCC1333273</div></div>
+      <div class="badge"><span class="amount">$0</span><div class="label">Inspection Cost</div></div>
+      <div class="badge"><span class="amount">3</span><div class="label">Counties Served</div></div>
     </div>
   </div>
 </div>
 
-<!-- FORM -->
-<div class="form-wrap">
+<div class="form-section">
   <div class="form-card">
-    <h2>Request a Free Commercial Inspection</h2>
+    <div class="form-card-header">
+      <img src="https://victoryroofer.com/wp-content/uploads/2025/12/Victory-Logo.png" alt="Victory E&I Roofing" onerror="this.style.display='none'" />
+      <h2>Request a Free Commercial Inspection</h2>
+    </div>
     <p class="sub">A licensed commercial specialist will contact you within 48 hours to schedule your site assessment.</p>
-
     <form id="haloForm" action="https://formspree.io/f/mlgkvkrk" method="POST">
-
       <label for="company">Company / Property Name *</label>
       <input type="text" id="company" name="company" placeholder="e.g. ABC Properties LLC" required />
-
       <label for="name">Your Name *</label>
       <input type="text" id="name" name="name" placeholder="First and last name" required />
-
       <label for="phone">Phone Number *</label>
       <input type="tel" id="phone" name="phone" placeholder="(954) 000-0000" required />
-
       <label for="email">Email Address *</label>
       <input type="text" id="email" name="email" placeholder="you@company.com" required />
-
       <label for="address">Property Address *</label>
       <input type="text" id="address" name="address" placeholder="Street address, city, zip" required />
-
       <label for="building_type">Building Type *</label>
       <select id="building_type" name="building_type" required>
         <option value="" disabled selected>Select building type</option>
@@ -470,42 +256,51 @@
         <option value="School / Education">School / Education</option>
         <option value="Other Commercial">Other Commercial</option>
       </select>
-
-      <!-- Hidden fields -->
       <input type="hidden" name="consent_given" value="yes" />
       <input type="hidden" name="source" value="HALO Commercial Landing Page" />
       <input type="hidden" name="_subject" value="New HALO Commercial Lead — Roof Inspection Request" />
       <input type="hidden" name="_next" value="https://haloleadgen.github.io/thank-you.html" />
       <input type="hidden" name="_cc" value="hila.atlan77@gmail.com" />
-
       <div class="consent-block">
         <div class="consent-row">
           <input type="checkbox" id="consent" name="consent" required />
-          <p>
-            By submitting this form, I agree to be contacted by <strong>Victory E&I Roofing and Construction, LLC</strong> (License CCC1333273) at the phone number provided. I consent to receive calls, prerecorded messages, and text messages regarding a commercial roof inspection. Consent is not required to receive services. Msg &amp; data rates may apply. Reply STOP to opt out. See our <a href="https://victoryroofer.com/privacy-policy" target="_blank">Privacy Policy</a>.
-          </p>
+          <p>By submitting this form, I agree to be contacted by <strong>Victory E&amp;I Roofing and Construction, LLC</strong> (License CCC1333273) at the phone number provided. I consent to receive calls, prerecorded messages, and text messages regarding a commercial roof inspection. Consent is not required to receive services. Msg &amp; data rates may apply. Reply STOP to opt out. See our <a href="https://victoryroofer.com/privacy-policy" target="_blank">Privacy Policy</a>.</p>
         </div>
       </div>
-
       <button type="submit">Request Free Commercial Inspection →</button>
-      <p class="disclaimer-small">No cost. No obligation. We'll follow up within 24 hours.</p>
+      <p class="disclaimer-small">No cost. No obligation. A licensed specialist will follow up within 48 hours.</p>
     </form>
   </div>
 </div>
 
-<!-- TRUST BAR -->
-<div class="trust">
-  <div class="trust-grid">
-    <div class="trust-item">FL Licensed &amp; Insured (CCC1333273)</div>
-    <div class="trust-item">BBB Accredited</div>
-    <div class="trust-item">My Safe FL Home Authorized</div>
-    <div class="trust-item">20+ Years Commercial Experience</div>
-    <div class="trust-item">Large-Scale Projects Welcome</div>
-    <div class="trust-item">Miami-Dade · Broward · Palm Beach</div>
+<div class="cred-strip">
+  <div class="cred-grid">
+    <div class="cred-item"><div class="cred-icon">✓</div> FL Licensed &amp; Insured (CCC1333273)</div>
+    <div class="cred-item"><div class="cred-icon">✓</div> BBB Accredited Business</div>
+    <div class="cred-item"><div class="cred-icon">✓</div> My Safe FL Home Authorized</div>
+    <div class="cred-item"><div class="cred-icon">✓</div> 20+ Years Commercial Experience</div>
+    <div class="cred-item"><div class="cred-icon">✓</div> Large-Scale Projects Welcome</div>
+    <div class="cred-item"><div class="cred-icon">✓</div> Miami-Dade · Broward · Palm Beach</div>
   </div>
 </div>
 
-<!-- TRUSTED BY -->
+<div class="about-section">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>South Florida's Trusted <span>Commercial Roofer</span> Since 2004</h2>
+      <p>Victory E&amp;I Roofing and Construction has been handling large-scale commercial roofing projects across South Florida for over two decades. We've worked on everything from national retail chains to high-rise condominiums — always on time, on budget, and fully documented.</p>
+      <p>Every inspection is performed by a state-licensed commercial roofing specialist. You get a full written report with photos — no sales pressure, no obligation.</p>
+      <a class="website-link" href="https://victoryroofer.com" target="_blank">🌐 Visit victoryroofer.com</a>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box"><span class="stat-num">20+</span><span class="stat-label">Years in Business</span></div>
+      <div class="stat-box"><span class="stat-num">$0</span><span class="stat-label">Cost to Inspect</span></div>
+      <div class="stat-box"><span class="stat-num">3</span><span class="stat-label">Counties Covered</span></div>
+      <div class="stat-box"><span class="stat-num">FL</span><span class="stat-label">State Certified</span></div>
+    </div>
+  </div>
+</div>
+
 <div class="trusted-by">
   <h3>Projects Completed For</h3>
   <div class="trusted-names">
@@ -523,89 +318,23 @@
   </div>
 </div>
 
-<!-- PAST PROJECTS -->
 <div class="projects">
   <h3>Recent Commercial Projects</h3>
   <p class="sub">Completed across Miami-Dade, Broward &amp; Palm Beach — 2020 through 2024</p>
   <div class="projects-grid">
-
-    <div class="project-card">
-      <div class="proj-type">Retail Chain</div>
-      <div class="proj-name">Walgreens</div>
-      <div class="proj-loc">Coral Springs, FL</div>
-      <div class="proj-work">Re-roof flat roof system</div>
-      <div class="proj-year">Completed 2024</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Restaurant / Commercial</div>
-      <div class="proj-name">Olive Garden</div>
-      <div class="proj-loc">Sunrise, FL</div>
-      <div class="proj-work">New construction — Metal &amp; Duro-Last flat roof</div>
-      <div class="proj-year">Completed 2024</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Condominium Association</div>
-      <div class="proj-name">Club Caribe Condominium</div>
-      <div class="proj-loc">Coconut Creek, FL</div>
-      <div class="proj-work">Full tile roof replacement</div>
-      <div class="proj-year">Completed 2024</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Apartment Complex</div>
-      <div class="proj-name">Federation Plaza Apartments</div>
-      <div class="proj-loc">Hollywood, FL</div>
-      <div class="proj-work">Sika roof waterproofing system</div>
-      <div class="proj-year">Completed 2024</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Condominium</div>
-      <div class="proj-name">Inspirational Point Condominium</div>
-      <div class="proj-loc">North Miami Beach, FL</div>
-      <div class="proj-work">Re-roof concrete deck BUR system</div>
-      <div class="proj-year">Completed 2024</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Residential Tower</div>
-      <div class="proj-name">Hallandale Towers East</div>
-      <div class="proj-loc">Hallandale Beach, FL</div>
-      <div class="proj-work">Full flat roof re-roof</div>
-      <div class="proj-year">Completed 2023</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Education / Conservatory</div>
-      <div class="proj-name">Harid Conservatory</div>
-      <div class="proj-loc">Boca Raton, FL</div>
-      <div class="proj-work">Re-roof concrete deck BUR system</div>
-      <div class="proj-year">Completed 2022</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Religious Institution</div>
-      <div class="proj-name">Rabbinical College of Florida</div>
-      <div class="proj-loc">Lauderhill, FL</div>
-      <div class="proj-work">New construction — R-20 BUR system</div>
-      <div class="proj-year">Completed 2022</div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-type">Community Center</div>
-      <div class="proj-name">Community Center Inc.</div>
-      <div class="proj-loc">Coral Springs, FL</div>
-      <div class="proj-work">Re-roof concrete deck BUR system</div>
-      <div class="proj-year">Completed 2020</div>
-    </div>
-
+    <div class="project-card"><div class="proj-type">Retail Chain</div><div class="proj-name">Walgreens</div><div class="proj-loc">Coral Springs, FL</div><div class="proj-work">Re-roof flat roof system</div><div class="proj-year">Completed 2024</div></div>
+    <div class="project-card"><div class="proj-type">Restaurant / Commercial</div><div class="proj-name">Olive Garden</div><div class="proj-loc">Sunrise, FL</div><div class="proj-work">New construction — Metal &amp; Duro-Last flat roof</div><div class="proj-year">Completed 2024</div></div>
+    <div class="project-card"><div class="proj-type">Condominium Association</div><div class="proj-name">Club Caribe Condominium</div><div class="proj-loc">Coconut Creek, FL</div><div class="proj-work">Full tile roof replacement</div><div class="proj-year">Completed 2024</div></div>
+    <div class="project-card"><div class="proj-type">Apartment Complex</div><div class="proj-name">Federation Plaza Apartments</div><div class="proj-loc">Hollywood, FL</div><div class="proj-work">Sika roof waterproofing system</div><div class="proj-year">Completed 2024</div></div>
+    <div class="project-card"><div class="proj-type">Condominium</div><div class="proj-name">Inspirational Point Condominium</div><div class="proj-loc">North Miami Beach, FL</div><div class="proj-work">Re-roof concrete deck BUR system</div><div class="proj-year">Completed 2024</div></div>
+    <div class="project-card"><div class="proj-type">Residential Tower</div><div class="proj-name">Hallandale Towers East</div><div class="proj-loc">Hallandale Beach, FL</div><div class="proj-work">Full flat roof re-roof</div><div class="proj-year">Completed 2023</div></div>
+    <div class="project-card"><div class="proj-type">Education / Conservatory</div><div class="proj-name">Harid Conservatory</div><div class="proj-loc">Boca Raton, FL</div><div class="proj-work">Re-roof concrete deck BUR system</div><div class="proj-year">Completed 2022</div></div>
+    <div class="project-card"><div class="proj-type">Religious Institution</div><div class="proj-name">Rabbinical College of Florida</div><div class="proj-loc">Lauderhill, FL</div><div class="proj-work">New construction — R-20 BUR system</div><div class="proj-year">Completed 2022</div></div>
+    <div class="project-card"><div class="proj-type">Community Center</div><div class="proj-name">Community Center Inc.</div><div class="proj-loc">Coral Springs, FL</div><div class="proj-work">Re-roof concrete deck BUR system</div><div class="proj-year">Completed 2020</div></div>
   </div>
-  <p class="projects-cta">All projects available as references. <strong>Call (954) 634-2028</strong> to speak with our team.</p>
+  <p class="projects-cta">All projects available as references. &nbsp;<a href="tel:+19546342028">Call (954) 634-2028</a> to speak with our team.</p>
 </div>
 
-<!-- WHO WE SERVE -->
 <div class="serve">
   <h3>Who We Work With</h3>
   <div class="serve-grid">
@@ -620,50 +349,34 @@
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
 <div class="steps">
   <h3>How It Works</h3>
-  <div class="step">
-    <div class="step-num">1</div>
-    <div class="step-text">
-      <strong>Submit your inspection request</strong>
-      <span>Takes 60 seconds. Tell us about your property and we'll handle the rest.</span>
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-num">2</div>
-    <div class="step-text">
-      <strong>We contact you within 24 hours</strong>
-      <span>A licensed commercial roofing specialist from Victory E&I schedules your site visit at your convenience.</span>
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-num">3</div>
-    <div class="step-text">
-      <strong>Free inspection + written assessment</strong>
-      <span>We inspect your roof at no charge and provide a full written report — no pressure, no obligation.</span>
-    </div>
+  <div class="steps-inner">
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Submit your inspection request</strong><span>Takes 60 seconds. Tell us about your property and we'll handle the rest.</span></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>We contact you within 48 hours</strong><span>A licensed commercial roofing specialist from Victory E&amp;I schedules your site visit at your convenience.</span></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Free inspection + written assessment</strong><span>We inspect your roof at no charge and provide a full written report with photos — no pressure, no obligation.</span></div></div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <p>Victory E&I Roofing and Construction, LLC &nbsp;·&nbsp; FL Roofing License CCC1333273</p>
-  <p>Serving Miami-Dade, Broward, and Palm Beach Counties</p>
-  <p style="margin-top:6px;"><a href="tel:+19546342028" style="color:#ccc;">(954) 634-2028</a></p>
-  <p style="margin-top:8px;">
+  <div class="footer-logo">
+    <img src="https://victoryroofer.com/wp-content/uploads/2025/12/Victory-Logo.png" alt="Victory E&I Roofing" onerror="this.style.display='none'" />
+  </div>
+  <p>Victory E&amp;I Roofing and Construction, LLC &nbsp;·&nbsp; FL Roofing License CCC1333273</p>
+  <p>Serving Miami-Dade, Broward, and Palm Beach Counties Since 2004</p>
+  <a class="footer-phone-link" href="tel:+19546342028">(954) 634-2028</a>
+  <p>
+    <a href="https://victoryroofer.com" target="_blank">victoryroofer.com</a>
+    &nbsp;·&nbsp;
     <a href="https://victoryroofer.com/privacy-policy" target="_blank">Privacy Policy</a>
   </p>
-  <p style="margin-top:8px; font-size:11px;">
-    By submitting the form on this page, you consent to be contacted by Victory E&I Roofing and Construction, LLC
-    via calls and texts. Consent is not required to receive services.
+  <p style="margin-top:10px; font-size:11px; opacity:0.6;">
+    By submitting the form on this page, you consent to be contacted by Victory E&amp;I Roofing and Construction, LLC via calls and texts. Consent is not required to receive services.
   </p>
 </footer>
 
 <script>
-  // Silent webhook to Google Apps Script (logs lead to HALO Leads Google Sheet)
   const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbypJZDS1JVCbxR3LPRESsdXESHNvoLqto5hIPswLToo75vze_UOafOJwN4-PSyFt4LagQ/exec';
-
   document.getElementById('haloForm').addEventListener('submit', function() {
     var data = {
       name: document.getElementById('name').value,
@@ -675,12 +388,7 @@
       consent_given: 'yes',
       source: 'HALO Commercial Landing Page'
     };
-    fetch(WEBHOOK_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    }).catch(function() {});
+    fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function() {});
   });
 </script>
 
