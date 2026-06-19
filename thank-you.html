@@ -3,31 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You're All Set | Victory E&I Roofing</title>
+  <title>Request Received | Victory E&I Roofing</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f3; color: #1a1a1a; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
-    .card { background: #fff; border-radius: 14px; padding: 40px 32px; max-width: 440px; width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.09); }
-    .check { width: 60px; height: 60px; background: #1b3a6b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; color: #fff; }
-    h1 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
-    p { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 16px; }
-    .highlight { background: #f0f4fa; border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #1b3a6b; font-weight: 600; margin-bottom: 24px; }
-    a.btn { display: inline-block; background: #1b3a6b; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 14px; }
-    footer { margin-top: 28px; font-size: 12px; color: #aaa; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f3;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 36px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .icon { font-size: 56px; margin-bottom: 20px; }
+    h1 { font-size: 26px; font-weight: 700; color: #1b3a6b; margin-bottom: 14px; }
+    p { font-size: 16px; color: #555; line-height: 1.65; margin-bottom: 12px; }
+    .highlight { font-weight: 700; color: #1a1a1a; }
+    .divider { border: none; border-top: 1px solid #ebebeb; margin: 28px 0; }
+    .what-next { text-align: left; }
+    .what-next h2 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #999; margin-bottom: 16px; }
+    .step { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: #1b3a6b; color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-text { font-size: 14px; color: #555; padding-top: 4px; line-height: 1.5; }
+    .footer-note { margin-top: 28px; font-size: 13px; color: #aaa; }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="check">✓</div>
+    <div class="icon">✅</div>
     <h1>You're all set!</h1>
-    <p>We received your inquiry.</p>
-    <div class="highlight">📞 A specialist from Victory E&I Roofing will call you shortly to confirm your appointment.</div>
-    <p style="font-size:13px; color:#888;">If you have any questions, please feel free to call us directly at <strong>(561) 973-8228</strong>.</p>
-    <a class="btn" href="https://victoryroofer.com" target="_blank">Learn more about us →</a>
+    <p>We received your inspection request and a <span class="highlight">licensed commercial roofing specialist</span> will call you within <span class="highlight">48 hours</span> to schedule your free site visit.</p>
+    <p>No cost. No obligation. Just an honest assessment of your roof.</p>
+    <hr class="divider" />
+    <div class="what-next">
+      <h2>What happens next</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">A specialist reviews your property details</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">We call you within 48 hours to schedule a convenient time</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Free on-site inspection + written report — no pressure</div>
+      </div>
+    </div>
+    <p class="footer-note">Questions? Call us at <a href="tel:+19546342028" style="color:#1b3a6b;">(954) 634-2028</a></p>
   </div>
-  <footer>
-    Victory E&I Roofing and Construction, LLC &nbsp;·&nbsp; FL License CCC1333273<br>
-    To opt out of future messages, reply STOP to any text we send you.
-  </footer>
 </body>
 </html>

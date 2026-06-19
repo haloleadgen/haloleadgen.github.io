@@ -451,6 +451,9 @@
       <label for="phone">Phone Number *</label>
       <input type="tel" id="phone" name="phone" placeholder="(561) 000-0000" required />
 
+      <label for="email">Email Address *</label>
+      <input type="text" id="email" name="email" placeholder="you@company.com" required />
+
       <label for="address">Property Address *</label>
       <input type="text" id="address" name="address" placeholder="Street address, city, zip" required />
 
@@ -468,6 +471,7 @@
         <option value="Other Commercial">Other Commercial</option>
       </select>
 
+      <!-- Hidden fields -->
       <input type="hidden" name="consent_given" value="yes" />
       <input type="hidden" name="source" value="HALO Commercial Landing Page" />
       <input type="hidden" name="_subject" value="New HALO Commercial Lead — Roof Inspection Request" />
@@ -645,10 +649,8 @@
 <footer>
   <p>Victory E&I Roofing and Construction, LLC &nbsp;·&nbsp; FL Roofing License CCC1333273</p>
   <p>Serving Miami-Dade, Broward, and Palm Beach Counties</p>
-  <p style="margin-top:6px;"><a href="tel:+15619738228" style="color:#ccc;">(561) 973-8228</a></p>
+  <p style="margin-top:6px;"><a href="tel:+19546342028" style="color:#ccc;">(954) 634-2028</a></p>
   <p style="margin-top:8px;">
-    <a href="https://victoryroofer.com" target="_blank">victoryroofer.com</a>
-    &nbsp;·&nbsp;
     <a href="https://victoryroofer.com/privacy-policy" target="_blank">Privacy Policy</a>
   </p>
   <p style="margin-top:8px; font-size:11px;">
@@ -658,12 +660,15 @@
 </footer>
 
 <script>
+  // Silent webhook to Google Apps Script (logs lead to HALO Leads Google Sheet)
   const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbypJZDS1JVCbxR3LPRESsdXESHNvoLqto5hIPswLToo75vze_UOafOJwN4-PSyFt4LagQ/exec';
+
   document.getElementById('haloForm').addEventListener('submit', function() {
     var data = {
       name: document.getElementById('name').value,
       company: document.getElementById('company').value,
       phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
       address: document.getElementById('address').value,
       building_type: document.getElementById('building_type').value,
       consent_given: 'yes',
